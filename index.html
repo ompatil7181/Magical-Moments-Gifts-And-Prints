@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>| Magical Moments Gifts and Prints ♡ |</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --pink-1: #f7e3ea;
+      --pink-2: #f6cfda;
+      --pink-3: #f2b9cc;
+      --cream: #faf3e6;
+      --paper: #fbf6ee;
+      --ink: #5a2740;
+      --ink-soft: #7a3a54;
+      --maroon: #5c1f3e;
+      --maroon-2: #7a2a52;
+      --gold: #cfa24a;
+      --shadow: 0 20px 50px -18px rgba(92, 31, 62, .45);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      color: var(--ink);
+      background:
+        repeating-linear-gradient(90deg, var(--pink-2) 0 26px, var(--pink-1) 26px 52px, var(--cream) 52px 60px, var(--pink-1) 60px 86px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .35) 0 4px, transparent 4px 34px),
+        var(--pink-1);
+      background-blend-mode: multiply, normal, normal;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    /* ===== phone stage ===== */
+    .stage {
+      position: relative;
+      width: min(94vw, 420px);
+      height: min(92vh, 760px);
+      background: linear-gradient(180deg, #fff, var(--pink-1) 40%, var(--pink-2));
+      border-radius: 36px;
+      box-shadow: var(--shadow), 0 0 0 8px #ffffffb0, 0 0 0 9px #e9bcd0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .corner-flower {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      width: 120px;
+      height: 120px;
+      opacity: .9;
+      pointer-events: none;
+      z-index: 5
+    }
+
+    .stage::before {
+      /* soft vignette */
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 60px 10px rgba(122, 42, 82, .08);
+      z-index: 4;
+    }
+
+    /* ===== screens ===== */
+    .screen {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(.96);
+      pointer-events: none;
+      transition: opacity .45s ease, transform .45s ease;
+      padding: 34px 22px;
+    }
+
+    .screen.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto
+    }
+
+    /* ===== torn note card ===== */
+    .note {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      min-height: 60%;
+      background: var(--paper);
+      clip-path: polygon(0.0% 0%, 6.25% 0%, 12.5% 0.38%, 18.75% 2.71%, 25.0% 0%, 31.25% 0.05%, 37.5% 0.56%, 43.75% 0%, 50.0% 0.08%, 56.25% 0.83%, 62.5% 1.88%, 68.75% 0%, 75.0% 0%, 81.25% 0%, 87.5% 1.98%, 93.75% 1.24%, 100.0% 0%, 97.54% 8.33%, 100% 16.67%, 100% 25.0%, 99.61% 33.33%, 99.48% 41.67%, 97.93% 50.0%, 97.45% 58.33%, 99.19% 66.67%, 97.6% 75.0%, 98.04% 83.33%, 98.22% 91.67%, 100% 100.0%, 93.75% 96.93%, 87.5% 98.73%, 81.25% 98.63%, 75.0% 100%, 68.75% 98.96%, 62.5% 99.46%, 56.25% 98.88%, 50.0% 99.56%, 43.75% 98.7%, 37.5% 97.96%, 31.25% 100%, 25.0% 100%, 18.75% 100%, 12.5% 99.74%, 6.25% 98.11%, 0% 100%, 0% 91.67%, 0.2% 83.33%, 0% 75.0%, 1.81% 66.67%, 0.57% 58.33%, 2.08% 50.0%, 0.53% 41.67%, 2.46% 33.33%, 2.08% 25.0%, 0% 16.67%, 0% 8.33%);
+      box-shadow: 0 18px 30px -14px rgba(92, 31, 62, .35);
+      padding: 34px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .note.dark {
+      background: linear-gradient(160deg, #8a3358, #6f2547 55%, #5c1f3e);
+      color: #fbe9ef;
+    }
+
+    h1.msg,
+    h2.msg {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      color: var(--maroon);
+      font-size: clamp(26px, 7vw, 34px);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .note.dark h1.msg {
+      color: #fff
+    }
+
+    .letter-text {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #fdeef4;
+    }
+
+    .letter-title {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: #ffd9e6;
+      margin: 0 0 -4px;
+    }
+
+    /* ===== buttons ===== */
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--ink);
+      background: #fff;
+      padding: 10px 26px;
+      border-radius: 30px;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 6px 14px -6px rgba(92, 31, 62, .35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn:active {
+      transform: translateY(0) scale(.97)
+    }
+
+    .btn.primary {
+      background: var(--maroon);
+      color: #fff;
+      border-bottom-color: #f0cf8f
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      border-bottom: 2px solid #f0cf8f
+    }
+
+    .fab {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #8fd0ff, #3d8fe0 70%);
+      box-shadow: 0 10px 18px -6px rgba(24, 60, 110, .55), inset 0 0 0 3px #eaf6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      z-index: 6;
+    }
+
+    .fab svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .fab.back {
+      background: radial-gradient(circle at 35% 30%, #8fd0ff, #3d8fe0 70%);
+    }
+
+    /* ===== envelope menu ===== */
+    .menu-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 38px 18px 70px
+    }
+
+    .menu-title {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      color: var(--maroon);
+      margin: 0
+    }
+
+    .envelope-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      gap: 14px 12px;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .envelope-btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      background: none;
+      width: 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      transition: transform .18s ease;
+    }
+
+    .envelope-btn:hover {
+      transform: translateY(-4px)
+    }
+
+    .envelope-btn:active {
+      transform: translateY(0) scale(.96)
+    }
+
+    .env-shape {
+      width: 92px;
+      height: 66px;
+      position: relative
+    }
+
+    .env-shape svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 8px 10px rgba(92, 31, 62, .35))
+    }
+
+    .env-tag {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 10.5px;
+      color: var(--maroon);
+      background: #fff;
+      border-radius: 10px;
+      padding: 5px 7px;
+      line-height: 1.15;
+      box-shadow: 0 4px 8px -3px rgba(92, 31, 62, .3);
+      width: 100%;
+    }
+
+    .char {
+      width: 110px;
+      height: auto;
+      display: block
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%
+    }
+
+    .photo-slot {
+      width: 150px;
+      background: #fff;
+      border: 8px solid var(--maroon-2);
+      border-bottom-width: 26px;
+      border-radius: 2px;
+      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .45);
+      position: relative;
+    }
+
+    .photo-slot .ph-inner {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background:
+        linear-gradient(135deg, #e9c7d3, #f6dfe6 60%, #efc9d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-slot .ph-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -22px;
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .restart-link {
+      margin-top: 6px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: #ffd9e6;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-height:680px) {
+      .note {
+        padding: 24px 20px 20px;
+        gap: 12px
+      }
+
+      h1.msg,
+      h2.msg {
+        font-size: 24px
+      }
+    }
+
+    /* ===== gallery screen (poems + photos) ===== */
+    .screen.gallery-screen {
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0
+    }
+
+    .gallery-scroll {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 34px 20px 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--maroon-2) transparent;
+    }
+
+    .gallery-scroll::-webkit-scrollbar {
+      width: 5px
+    }
+
+    .gallery-scroll::-webkit-scrollbar-thumb {
+      background: var(--maroon-2);
+      border-radius: 10px
+    }
+
+    .gallery-title {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      color: var(--maroon);
+      margin: 6px 0 0;
+      text-align: center
+    }
+
+    .gallery-sub {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-align: center;
+      margin: -8px 0 4px;
+      opacity: .75;
+      letter-spacing: .3px
+    }
+
+    /* --- poems --- */
+    .poems-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 340px;
+      margin-bottom: 8px
+    }
+
+    .poem-card {
+      position: relative;
+      background: var(--paper);
+      border: 2px solid var(--pink-3);
+      border-radius: 14px;
+      box-shadow: 0 14px 26px -14px rgba(92, 31, 62, .4);
+      padding: 20px 22px 18px;
+      opacity: 0;
+      transform: translateX(-42px) scale(.96);
+      transition: opacity .7s cubic-bezier(.2, .7, .3, 1), transform .7s cubic-bezier(.2, .7, .3, 1);
+    }
+
+    .poem-card.from-right {
+      transform: translateX(42px) scale(.96)
+    }
+
+    .poem-card.in-view {
+      opacity: 1;
+      transform: translateX(0) scale(1)
+    }
+
+    .poem-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      pointer-events: none;
+      background: repeating-linear-gradient(transparent 0 27px, rgba(207, 162, 74, .14) 27px 28px);
+    }
+
+    .poem-title {
+      font-family: 'Caveat', cursive;
+      font-size: 21px;
+      color: var(--maroon);
+      margin: 0 0 6px;
+      position: relative
+    }
+
+    .poem-text {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      white-space: pre-line;
+      margin: 0;
+      position: relative
+    }
+
+    .poem-card.size-sm .poem-text {
+      font-size: 17px
+    }
+
+    .poem-card.size-md .poem-text {
+      font-size: 19px
+    }
+
+    .poem-card.size-lg .poem-text {
+      font-size: 21px
+    }
+
+    /* --- photo grid --- */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px 12px;
+      width: 100%;
+      max-width: 340px
+    }
+
+    .photo-frame {
+      position: relative;
+      background: #fff;
+      border: 6px solid var(--maroon-2);
+      border-bottom-width: 20px;
+      border-radius: 2px;
+      box-shadow: 0 10px 18px -9px rgba(0, 0, 0, .4);
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .3, 1);
+    }
+
+    .photo-frame img,
+    .photo-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 2;
+      background: #000
+    }
+
+    .photo-frame .ph-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e9c7d3, #f6dfe6 60%, #efc9d6);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      color: var(--maroon-2);
+      z-index: 1;
+    }
+
+    .photo-frame .play-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(58, 21, 48, .6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .photo-frame .play-badge svg {
+      width: 10px;
+      height: 10px;
+      margin-left: 1px
+    }
+
+    .photo-frame::after {
+      content: attr(data-cap);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -17px;
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 12px;
+      color: var(--maroon-2);
+      z-index: 3;
+    }
+
+    .photo-frame.from-left {
+      transform: translateX(-36px) rotate(0deg)
+    }
+
+    .photo-frame.from-right {
+      transform: translateX(36px) rotate(0deg)
+    }
+
+    .photo-frame.in-view {
+      opacity: 1;
+      transform: translateX(0) rotate(var(--r, -1.5deg))
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stage" id="stage" aria-label="Interactive Open When gift site">
+
+    <!-- decorative flower -->
+    <svg class="corner-flower" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g opacity=".95">
+        <path
+          d="M70 40c10-14 30-16 34 0 4 16-12 26-24 30 12-2 30 4 30 20 0 14-18 20-30 12 8 10 6 28-10 30-16 2-22-16-18-28-8 10-26 10-30-4-4-14 10-24 22-26-12 0-24-10-20-24 4-14 22-14 30-4-2-12 6-24 16-6z"
+          fill="#eab6c6" />
+        <path
+          d="M70 40c10-14 30-16 34 0 4 16-12 26-24 30 12-2 30 4 30 20 0 14-18 20-30 12 8 10 6 28-10 30-16 2-22-16-18-28-8 10-26 10-30-4-4-14 10-24 22-26-12 0-24-10-20-24 4-14 22-14 30-4-2-12 6-24 16-6z"
+          fill="url(#fg)" opacity=".55" />
+        <circle cx="66" cy="58" r="10" fill="#f7e2b8" />
+        <g stroke="#d79fb2" stroke-width="1.4" opacity=".7">
+          <path d="M40 90c-6 6-8 14-4 22" />
+          <path d="M50 96c-4 8-2 16 4 22" />
+        </g>
+      </g>
+      <defs>
+        <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff" />
+          <stop offset="1" stop-color="#e39cb4" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- ================= SCREEN 1 ================= -->
+    <section class="screen active" id="s1" data-flow>
+      <div class="note">
+        <h1 class="msg">I made<br>something<br>for you</h1>
+        <svg class="char" viewBox="0 0 120 110">
+          <g>
+            <ellipse cx="60" cy="78" rx="34" ry="26" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="60" cy="46" r="30" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M36 30 28 12 46 24Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M84 30 92 12 74 24Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="48" cy="46" r="3.4" fill="#5a2740" />
+            <circle cx="72" cy="46" r="3.4" fill="#5a2740" />
+            <ellipse cx="42" cy="56" rx="6" ry="4" fill="#f7c6d3" opacity=".8" />
+            <ellipse cx="78" cy="56" rx="6" ry="4" fill="#f7c6d3" opacity=".8" />
+            <path d="M53 56q7 6 14 0" stroke="#5a2740" stroke-width="2" fill="none" stroke-linecap="round" />
+            <ellipse cx="60" cy="92" rx="10" ry="7" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+          </g>
+        </svg>
+        <button class="btn primary" data-goto="s2">what?</button>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 2 (choice) ================= -->
+    <section class="screen" id="s2">
+      <div class="note">
+        <h1 class="msg">Will you<br>see it?</h1>
+        <svg class="char" viewBox="0 0 140 100">
+          <g>
+            <ellipse cx="50" cy="66" rx="32" ry="28" fill="#c99a72" />
+            <circle cx="50" cy="34" r="24" fill="#c99a72" />
+            <circle cx="30" cy="18" r="8" fill="#c99a72" />
+            <circle cx="70" cy="18" r="8" fill="#c99a72" />
+            <circle cx="42" cy="34" r="2.6" fill="#3a2418" />
+            <circle cx="58" cy="34" r="2.6" fill="#3a2418" />
+            <ellipse cx="50" cy="42" rx="7" ry="5" fill="#fff" />
+            <ellipse cx="90" cy="70" rx="30" ry="26" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="90" cy="40" r="22" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="82" cy="40" r="2.4" fill="#5a2740" />
+            <circle cx="98" cy="40" r="2.4" fill="#5a2740" />
+            <ellipse cx="76" cy="48" rx="5" ry="3.4" fill="#f7c6d3" opacity=".8" />
+            <ellipse cx="104" cy="48" rx="5" ry="3.4" fill="#f7c6d3" opacity=".8" />
+            <path d="M64 78q6-14 20-4" stroke="#e46f8f" stroke-width="3" fill="none" stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="btn-row">
+          <button class="btn primary" data-goto="s4">yes</button>
+          <button class="btn" data-goto="s3">no</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 3 (if no) ================= -->
+    <section class="screen" id="s3">
+      <div class="note">
+        <h1 class="msg">please say<br>yes!</h1>
+        <svg class="char" viewBox="0 0 120 110">
+          <g>
+            <ellipse cx="60" cy="80" rx="30" ry="22" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="60" cy="50" r="26" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M38 34 30 18 48 30Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M82 34 90 18 72 30Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="50" cy="50" r="3" fill="#5a2740" />
+            <circle cx="70" cy="50" r="3" fill="#5a2740" />
+            <path d="M48 62q12 8 24 0" stroke="#5a2740" stroke-width="2" fill="none" stroke-linecap="round" />
+            <ellipse cx="44" cy="58" rx="5" ry="3.4" fill="#f7c6d3" opacity=".7" />
+            <ellipse cx="76" cy="58" rx="5" ry="3.4" fill="#f7c6d3" opacity=".7" />
+          </g>
+        </svg>
+        <button class="btn primary" data-goto="s4">fine</button>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 4 (ready) ================= -->
+    <section class="screen" id="s4">
+      <div class="note">
+        <h2 class="msg" style="font-size:18px;opacity:.75">yay!</h2>
+        <h1 class="msg">are you ready<br>for the surprise?</h1>
+        <svg class="char" viewBox="0 0 130 110">
+          <g>
+            <ellipse cx="70" cy="72" rx="34" ry="28" fill="#c99a72" />
+            <circle cx="70" cy="38" r="26" fill="#c99a72" />
+            <circle cx="50" cy="20" r="8" fill="#c99a72" />
+            <circle cx="90" cy="20" r="8" fill="#c99a72" />
+            <circle cx="40" cy="66" r="22" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M60 40q4 10-4 16" stroke="#3a2418" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M78 40q-4 10 4 16" stroke="#3a2418" stroke-width="2" fill="none" stroke-linecap="round" />
+            <circle cx="34" cy="64" r="2.4" fill="#5a2740" />
+            <circle cx="46" cy="64" r="2.4" fill="#5a2740" />
+            <ellipse cx="40" cy="74" rx="6" ry="4" fill="#f7c6d3" opacity=".8" />
+          </g>
+        </svg>
+        <button class="btn primary" data-goto="menu">yes!!</button>
+      </div>
+    </section>
+
+    <!-- ================= MENU (envelopes) ================= -->
+    <section class="screen" id="menu">
+      <div class="menu-wrap">
+        <p class="menu-title">open when&hellip;</p>
+        <div class="envelope-grid">
+          <button class="envelope-btn" data-goto="l-miss"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">you miss me</span></button>
+          <button class="envelope-btn" data-goto="l-sad"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">you're sad</span></button>
+          <button class="envelope-btn" data-goto="l-happy"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">you're happy</span></button>
+          <button class="envelope-btn" data-goto="l-hug"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">you need a hug</span></button>
+          <button class="envelope-btn" data-goto="l-fight"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">we fight</span></button>
+          <button class="envelope-btn" data-goto="gallery"><span class="env-shape"><svg viewBox="0 0 92 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="14" width="88" height="50" rx="3" fill="#5c1f3e" />
+                <path d="M2 16 L46 46 L90 16" fill="none" stroke="#8a3358" stroke-width="3" stroke-linejoin="round" />
+                <path d="M2 14 L46 4 L90 14 L46 40 Z" fill="#7a2a52" stroke="#5c1f3e" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="30" y="26" width="32" height="12" rx="3" fill="#3a1530" />
+                <text x="46" y="34.5" text-anchor="middle" font-family="Nunito, sans-serif" font-size="6.2"
+                  font-weight="800" fill="#f3d9a6" letter-spacing="0.5">OPEN WHEN</text>
+              </svg></span><span class="env-tag">our poems &amp; us</span></button>
+        </div>
+      </div>
+      <button class="fab" data-goto="final" aria-label="Continue to final note">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M9 6l8 6-8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= LETTER: you miss me ================= -->
+    <section class="screen" id="l-miss">
+      <div class="note dark">
+        <p class="letter-title">you miss me</p>
+        <p class="letter-text"> 🤍
+
+I know distance sucks sometimes. I wish I could just magically appear next to you whenever you miss me.
+
+So until I can actually be there, keep this little piece of me with you.
+
+Close your eyes, imagine I'm sitting beside you, annoying you like always 😂 and just remember—
+
+No matter how far we are, you're never really alone.
+
+I miss you too. More than I probably say. 🥹❤️ </p>
+        <svg class="char" style="width:80px" viewBox="0 0 120 100">
+          <g>
+            <ellipse cx="70" cy="70" rx="28" ry="24" fill="#c99a72" />
+            <circle cx="70" cy="42" r="20" fill="#c99a72" />
+            <circle cx="56" cy="30" r="7" fill="#c99a72" />
+            <circle cx="84" cy="30" r="7" fill="#c99a72" />
+            <ellipse cx="40" cy="72" rx="24" ry="22" fill="#fff" />
+            <circle cx="34" cy="66" r="2.2" fill="#5a2740" />
+            <circle cx="46" cy="66" r="2.2" fill="#5a2740" />
+            <ellipse cx="40" cy="74" rx="5" ry="3.4" fill="#f7c6d3" opacity=".8" />
+            <path d="M92 60c6-4 12-2 12 6s-8 10-12 6" fill="#f0798f" />
+          </g>
+        </svg>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= LETTER: you're sad ================= -->
+    <section class="screen" id="l-sad">
+      <div class="note dark">
+        <p class="letter-title">you're sad</p>
+        <p class="letter-text">Open when you need a smile. 😂
+
+Congratulations.
+
+You've officially opened the most useless envelope in this entire box. 😭😂
+
+But since you're already here…
+
+SMILE.
+
+Yes, right now.
+
+And remember that somewhere there is a boy who probably knows exactly how to irritate you within 5 minutes. 😂❤️
+
+You're welcome.</p>
+        <svg class="char" style="width:80px" viewBox="0 0 120 100">
+          <g>
+            <ellipse cx="70" cy="70" rx="26" ry="22" fill="#9a8f96" />
+            <circle cx="70" cy="42" r="18" fill="#9a8f96" />
+            <path d="M56 30 50 22 62 28Z" fill="#9a8f96" />
+            <path d="M84 30 90 22 78 28Z" fill="#9a8f96" />
+            <ellipse cx="40" cy="72" rx="22" ry="20" fill="#fff" />
+            <circle cx="34" cy="66" r="2" fill="#5a2740" />
+            <circle cx="46" cy="66" r="2" fill="#5a2740" />
+            <path d="M35 74q5 4 10 0" stroke="#5a2740" stroke-width="1.6" fill="none" stroke-linecap="round" />
+            <path d="M92 58c6-4 12-2 12 6s-8 10-12 6" fill="#f0798f" />
+          </g>
+        </svg>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= LETTER: you're happy ================= -->
+    <section class="screen" id="l-happy">
+      <div class="note dark">
+        <p class="letter-title">you're happy</p>
+        <p class="letter-text">Open when you want to go back to our memories. 🤍
+I wish we could pause time sometimes.
+Go back to the days when we didn't know how important those little moments would become.
+The stupid conversations.
+The random laughs.
+The fights.
+The hugs.
+The waiting.
+Everything.
+Maybe someday we'll have hundreds of new memories and these will feel like such a small part of our story.
+But I'll always keep them close.
+Because they were ours. ❤️</p>
+        <svg class="char" style="width:80px" viewBox="0 0 120 100">
+          <g>
+            <ellipse cx="60" cy="70" rx="30" ry="24" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="60" cy="40" r="24" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M38 24 30 8 48 20Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M82 24 90 8 72 20Z" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <path d="M48 38q2-6 6 0" stroke="#5a2740" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M66 38q2-6 6 0" stroke="#5a2740" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M46 48q14 12 28 0" stroke="#5a2740" stroke-width="2.2" fill="none" stroke-linecap="round" />
+            <ellipse cx="42" cy="46" rx="6" ry="4" fill="#f7c6d3" opacity=".8" />
+            <ellipse cx="78" cy="46" rx="6" ry="4" fill="#f7c6d3" opacity=".8" />
+          </g>
+        </svg>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= LETTER: you need a hug ================= -->
+    <section class="screen" id="l-hug">
+      <div class="note dark">
+        <p class="letter-title">you need a hug</p>
+        <p class="letter-text"> Open when you can't sleep. 🌙
+
+It's probably late, you're scrolling your phone and thinking about random things instead of sleeping. 😂
+
+So here's your reminder:
+
+Put the phone down.
+
+Close your eyes.
+
+And imagine we're just sitting somewhere together, talking about absolutely nothing until one of us falls asleep.
+
+Goodnight, my love . 🤍
+
+Sleep now. And don't you dare open Instagram again. 😂.</p>
+        <svg class="char" style="width:90px" viewBox="0 0 140 100">
+          <g>
+            <ellipse cx="46" cy="66" rx="28" ry="24" fill="#c99a72" />
+            <circle cx="46" cy="36" r="20" fill="#c99a72" />
+            <circle cx="30" cy="24" r="7" fill="#c99a72" />
+            <circle cx="62" cy="24" r="7" fill="#c99a72" />
+            <circle cx="40" cy="36" r="2.2" fill="#3a2418" />
+            <circle cx="52" cy="36" r="2.2" fill="#3a2418" />
+            <ellipse cx="94" cy="70" rx="26" ry="22" fill="#fff" />
+            <circle cx="94" cy="42" r="20" fill="#fff" />
+            <circle cx="88" cy="42" r="2.2" fill="#5a2740" />
+            <circle cx="100" cy="42" r="2.2" fill="#5a2740" />
+            <ellipse cx="82" cy="50" rx="5" ry="3.4" fill="#f7c6d3" opacity=".8" />
+            <path d="M64 60q6 12 0 24" stroke="#c99a72" stroke-width="10" fill="none" stroke-linecap="round" />
+          </g>
+        </svg>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= LETTER: we fight ================= -->
+    <section class="screen" id="l-fight">
+      <div class="note dark">
+        <p class="letter-title">we fight</p>
+        <div class="photo-slot">
+          <div class="ph-inner">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+               <image
+      href="images/WhatsApp Image 2026-09-18 at 11.49.10 AM.jpeg"
+      x="0"
+      y="0"
+      width="44"
+      height="44"
+      preserveAspectRatio="xMidYMid slice"
+    />
+              <path
+                d="M12 21s-7-4.35-9.5-8.8C.7 8.7 2.4 5 6 5c2 0 3.3 1 4 2.2C10.7 6 12 5 14 5c3.6 0 5.3 3.7 3.5 7.2C19 16.65 12 21 12 21z"
+                fill="#e39cb4" />
+            </svg>
+          </div>
+          <p class="ph-caption">I love you</p>
+        </div>
+        <p class="letter-text" style="margin-top:10px"> No way... <br> <b>WE WONT FIGHT BECAUSE YOU ARE PRECIOUS TO ME...</b> <br> More than my life  🫂💎  </p>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= GALLERY: poems + photos + videos ================= -->
+    <section class="screen gallery-screen" id="gallery">
+      <div class="gallery-scroll" id="galleryScroll">
+        <p class="gallery-title">my poems for you cutiee...</p>
+        <p class="gallery-sub">scroll to read &amp; see everything ↓</p>
+
+        <div class="poems-wrap">
+          <div class="poem-card size-sm" data-poem>
+            <p class="poem-title">poem one</p>
+            <p class="poem-text"> Tu hi hey is berang se duniya mai pyaar ka ek rang...maana alag hey hum do
+Par fir bhi ek hey hum do..
+Kehne ko to ye waqt chala gaya unhi par pata na chala kab baand ke gaya ek dor ke sath..yuhi Palo mai kuch baandh gaya itne kisse ki har ek mulakat bhi hasin kar gaya...uhni nai saanjha ye ishq apna dekhne jaaye to aap ho coffe ke diwane or hum hey is sawali se chai ke bahane...fir bhi ban gaya ye Bandhan anokha...har ek lamha khubsurat hey tere sath snowflake or aane wala bhi har ek sunhera jindagi ka pal..itne pal sath mai bitaye hey ki leke baitu to pura saal inhi ke sath bitau par nayi yaade bhi karni hey janvi...milenge jaldi baby bahot jaldi..nahi raha jara dur..missing you...waise aati mere kandhe tak nai ho par Chadi mere sir pe ho💋❤️
+
+            </p>
+          </div>
+          <div class="poem-card size-lg" data-poem>
+            <p class="poem-title">poem two</p>
+            <p class="poem-text"> </p>To my dearest partner
+ You are beautiful my love the way you are  you don't have to be changing something if we want us I am changing my heart and love you till eternity.....my love today I ll promise to help you out by just staying their in your backside as your wellwisher partner...my love I am proud of you..I just want you to know that I am deeply in love with you and I can't even imagine my life without you...my love thank you for loving me  like the way I always wanted to be....thank you my precious one..you are jewel of my life and I am really looking forward to stay with vasuli and you...my love on your bday if I did something wrong I am sry for all that mistakes ...but promise my love stay with Me just like you stay with me..their is many issue come and go in our life but now life meant to be us...
+          </div>
+          <div class="poem-card size-md" data-poem>
+            <p class="poem-title">poem three</p>
+            <p class="poem-text"> under maintainance</p>
+          </div>
+        </div>
+
+        <p class="gallery-title">every little moment</p>
+        <p class="gallery-sub"> My Most fav section of this personal site is this...  </p>
+        <div class="photo-grid" id="photoGrid"><!-- filled by JS below --></div>
+      </div>
+      <button class="fab back" data-goto="menu" aria-label="Back to envelopes">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-8 6 8 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ================= FINAL ================= -->
+    <section class="screen" id="final">
+      <div class="note">
+        <p class="letter-text"
+          style="color:var(--ink-soft);font-family:'Caveat',cursive;font-size:19px;line-height:1.5;font-weight:600">
+          If you've made it through these letters, I hope at least one of them made you smile a little. I wrote these
+          for the days I can't be right next to you. Whenever I'm not around, read one and remember you are loved
+          deeply, constantly, and without question. Always.
+        </p>
+        <svg class="char" viewBox="0 0 120 100">
+          <g>
+            <ellipse cx="70" cy="68" rx="26" ry="22" fill="#c99a72" />
+            <circle cx="70" cy="40" r="18" fill="#c99a72" />
+            <circle cx="58" cy="28" r="6" fill="#c99a72" />
+            <circle cx="82" cy="28" r="6" fill="#c99a72" />
+            <ellipse cx="42" cy="70" rx="22" ry="20" fill="#fff" stroke="#e7c9d3" stroke-width="2" />
+            <circle cx="36" cy="64" r="2.2" fill="#5a2740" />
+            <circle cx="48" cy="64" r="2.2" fill="#5a2740" />
+            <path d="M37 72q5 4 10 0" stroke="#5a2740" stroke-width="1.6" fill="none" stroke-linecap="round" />
+            <ellipse cx="42" cy="72" rx="5" ry="3.4" fill="#f7c6d3" opacity=".8" />
+          </g>
+        </svg>
+        <button class="btn" data-goto="menu">read again</button>
+        <button class="restart-link" data-goto="s1" style="color:var(--ink-soft)">start over from the beginning</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const screens = [...document.querySelectorAll('.screen')];
+    function show(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      screens.forEach(s => s.classList.toggle('active', s === target));
+      history.replaceState(null, '', '#' + id);
+    }
+    document.querySelectorAll('[data-goto]').forEach(btn => {
+      btn.addEventListener('click', () => show(btn.dataset.goto));
+    });
+    // deep-link support
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = location.hash.slice(1);
+      if (hash && document.getElementById(hash)) show(hash);
+    });
+
+    // ===== gallery: your actual photos & videos =====
+    // open powershell and cd path and put this cmd ( Also unable clipboard ) - Get-ChildItem -File | Where-Object { $_.Name -ne 'PUT_YOUR_PHOTOS_HERE.txt' } | ForEach-Object { "  '" + $_.Name + "'," } | Set-Clipboard
+    const MEDIA_FILES = [   
+    'WhatsApp Image 2026-09-18 at 11.49.10 AM.jpeg',
+  'WhatsApp Image 2026-09-18 at 11.49.11 AM (1).jpeg',
+  'WhatsApp Image 2026-09-18 at 11.49.11 AM (2).jpeg',
+  'WhatsApp Image 2026-09-18 at 11.49.11 AM.jpeg',
+  'WhatsApp Image 2026-09-18 at 11.49.12 AM.jpeg',
+  'WhatsApp Image 2026-09-18 at 11.50.23 AM.jpeg',
+  'WhatsApp Image 2026-09-18 at 11.52.31 AM.jpeg',
+  'WhatsApp Image 2026-09-18 at 11.52.32 AM (1).jpeg',
+  'WhatsApp Image 2026-09-18 at 11.52.32 AM (2).jpeg',
+  'WhatsApp Image 2026-09-18 at 11.52.32 AM.jpeg',
+  'WhatsApp Video 2026-09-18 at 11.49.49 AM.mp4',
+  'WhatsApp Video 2026-09-18 at 11.52.27 AM.mp4',
+  'WhatsApp Video 2026-09-18 at 11.52.31 AM.mp4',
+  'WhatsApp Image 2026-09-18 at 3.07.09 PM.jpeg'
+    ];
+
+    const VIDEO_EXT = ['mp4', 'mov', 'webm', 'm4v'];
+    const grid = document.getElementById('photoGrid');
+    MEDIA_FILES.forEach((file, i) => {
+      const ext = (file.split('.').pop() || '').toLowerCase();
+      const isVideo = VIDEO_EXT.includes(ext);
+
+      const frame = document.createElement('div');
+      frame.className = 'photo-frame ' + (isVideo ? 'is-video ' : '') + (i % 2 === 0 ? 'from-left' : 'from-right');
+      frame.style.setProperty('--r', (Math.random() * 6 - 3).toFixed(1) + 'deg');
+      frame.setAttribute('data-cap', '');
+
+      const fallback = document.createElement('div');
+      fallback.className = 'ph-fallback';
+      fallback.textContent = String(i + 1).padStart(2, '0');
+      frame.appendChild(fallback);
+
+      if (isVideo) {
+        const vid = document.createElement('video');
+        vid.src = 'images/' + file;
+        vid.controls = true;
+        vid.playsInline = true;
+        vid.preload = 'metadata';
+        vid.onerror = () => vid.remove();
+        frame.appendChild(vid);
+
+        const badge = document.createElement('span');
+        badge.className = 'play-badge';
+        badge.innerHTML = '<svg viewBox="0 0 10 10"><polygon points="0,0 10,5 0,10" fill="#fff"/></svg>';
+        frame.appendChild(badge);
+      } else {
+        const img = document.createElement('img');
+        img.src = 'images/' + file;
+        img.alt = 'memory ' + (i + 1);
+        img.loading = 'lazy';
+        img.onerror = () => img.remove();
+        frame.appendChild(img);
+      }
+
+      grid.appendChild(frame);
+    });
+
+    // ===== gallery: pop-in on scroll (poems + photos + videos, alternating sides) =====
+    const revealTargets = document.querySelectorAll('#gallery .poem-card, #gallery .photo-frame');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (idx % 4) * 60 + 'ms';
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, root: document.getElementById('galleryScroll'), rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  </script>
+
+</body>
+
+</html>
